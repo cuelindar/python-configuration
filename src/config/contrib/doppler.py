@@ -48,7 +48,7 @@ class DopplerConfiguration(Configuration):
             config: str,
             secrets: Optional[Union[str, Iterable[str], None]]  = None,
             cache_expiration: Optional[Union[float, int]] = 5 * 60,
-            suppress_exceptions: bool = True,
+            suppress_exceptions: bool = False,
             **kwargs: Dict[str, Any],
     ):
         r"""
@@ -56,8 +56,8 @@ class DopplerConfiguration(Configuration):
 
         Parameters:
         access_token: User or Service token to access Doppler.
-        project: Doppler project name. Unused if access_token is a service token.
-        config: Doppler config name. Unused if access_token is a service token.
+        project: Doppler project name.
+        config: Doppler config name.
         secrets: Either a CSV string or a list of secret names to include. If None, all
             secrets for the config will be included.
         cache_expiration: Cache expiration (in seconds)
